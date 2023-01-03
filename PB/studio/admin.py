@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from studio.models import Amenities, Image, Studio
+from PB.studio.models import Amenities, Image, Studio
 
 
 class ImageInline(admin.TabularInline):

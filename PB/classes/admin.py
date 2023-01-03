@@ -1,8 +1,8 @@
 from django.contrib import admin
 
-from classes.models import Class
+from PB.classes.models import Class
 
-from classes.models import Keyword
+from PB.classes.models import Keyword
 
 
 # Register your models here.

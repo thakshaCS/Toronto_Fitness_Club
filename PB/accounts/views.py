@@ -1,9 +1,9 @@
 from rest_framework.views import APIView
 from rest_framework.generics import UpdateAPIView
-from accounts.serializers import RegisterSerializer, LoginSerializer, UserInfoSerializer
+from PB.accounts.serializers import RegisterSerializer, LoginSerializer, UserInfoSerializer
 from rest_framework import response, status
 from django.contrib.auth import authenticate
-from accounts.models import User
+from PB.accounts.models import User
 from rest_framework.response import Response
 import jwt
 
@@ -90,7 +90,7 @@ class LoginAPIView(APIView):
         # error check for payload
         if request.data['username'] == '' and request.data['password'] == '':
             return response.Response({"username": "username is required", "password": "password is required"},
-                                     status=status.HTTP_400_BAD_REQUEST)                         
+                                     status=status.HTTP_400_BAD_REQUEST)
         if request.data['username'] == '':
             return response.Response({"username": "username is required"},
                                      status=status.HTTP_400_BAD_REQUEST)
@@ -187,7 +187,7 @@ class UpdateInfoAPIView(UpdateAPIView):
         if auth_token:
             user = User.objects.get(username=jwt.decode(auth_token, 'secret', algorithms="HS256")["username"])
             serializer = self.serializer_class(user, data=request.data, context={'request': request}, partial=True)
-            
+
             serializer.is_valid()
             x = serializer.errors
 

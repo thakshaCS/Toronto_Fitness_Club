@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
-from classes.models import Class
-from studio.models import Amenities, ClickStudio, Location, PostalCode, Studio, \
+from PB.classes.models import Class
+from PB.studio.models import Amenities, ClickStudio, Location, PostalCode, Studio, \
     StudioToDistance
 
 

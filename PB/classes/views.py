@@ -14,11 +14,11 @@ from rest_framework.generics import RetrieveAPIView, ListAPIView, CreateAPIView,
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.views import APIView
 
-from classes.models import Keyword, Class
+from PB.classes.models import Keyword, Class
 from django.views.generic import TemplateView, ListView
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
-from classes.serializers import CreateClassesSerializer, EnrolClassesSerializer
+from PB.classes.serializers import CreateClassesSerializer, EnrolClassesSerializer
 
 
 # Create your views here.

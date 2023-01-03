@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from classes.models import Class
+from PB.classes.models import Class
 
 
 class CreateClassesSerializer(serializers.ModelSerializer):

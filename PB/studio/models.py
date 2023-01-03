@@ -38,7 +38,7 @@ class Studio(models.Model):
     # images = models.ForeignKey(Image, )
 
     objects = models.Manager()
-    
+
     def __str__(self):
         return f'{self.name}'
 
@@ -79,7 +79,7 @@ class PostalCode(models.Model):
     # write regex to validate postal code
     postal_code = models.CharField(max_length=200, null=False, blank=False)
 
-from classes.models import Class
+from PB.classes.models import Class
 # have to migrate models
 class StudioToDistance(models.Model):
     studio_id = models.CharField(max_length=200)

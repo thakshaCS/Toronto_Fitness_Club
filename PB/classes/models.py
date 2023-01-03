@@ -1,11 +1,11 @@
 from django.db import models
 from django.db.models import CASCADE
 
-from studio.models import Studio
+from PB.studio import Studio
 
 
 # Create your models here.
-from studio.models import Studio
+from PB.studio import Studio
 
 
 class Class(models.Model):
@@ -67,7 +67,7 @@ class Class(models.Model):
             self.day = 'Saturday'
         if self.day == 7:
             self.day = 'Sunday'
-        
+
 
         return {"name": self.name, "description": self.description,
                 "coach": self.coach, "day": self.day, "start_time": self.start_time,
